@@ -10,8 +10,6 @@ return ans;
 }
 
 
-
-
 int main()
 {
     int t = 0;
@@ -21,22 +19,15 @@ int main()
     int xa,ya,xb,yb,xf,yf;
 
     int ans = 0;
+
     while(t--){
+
         ans = 0;
         cin>>xa>>ya>>xb>>yb>>xf>>yf;
 
-        int maxm = 0;
-        int minm = 0;
-        if(ya>yb){
-            maxm = ya;
-            minm = yb;
-        }else{
 
-            maxm = yb;
-            minm = ya;
-        }
-
-       if(((xf == xa && xf == xb)&& (yf>=minm && yf<=maxm)) || ((xf > xa && xf < xb) && ( yf >= maxm) ) ){
+       if ((xa == xb && xf == xa && min(ya,yb)<yf && yf<max(ya,yb)) ||
+          (ya == yb && yf == ya && min(xa,xb)<xf && xf<max(xa,xb))){
             ans = value(xa,ya,xb,yb,xf,yf);
             cout<<ans+2<<endl;
         }
