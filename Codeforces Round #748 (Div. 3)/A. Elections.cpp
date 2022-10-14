@@ -5,8 +5,6 @@ int solve(int a, int b , int c){
     return max(0, max(b,c) + 1 - a);
 }
 
-
-
 int main()
 {
     int t;
